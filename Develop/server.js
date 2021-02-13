@@ -1,5 +1,6 @@
 // Requiring necessary npm packages
 var express = require("express");
+var mongoose = require("mongoose");
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -14,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { use
 // Requiring our routes
 var htmlRoutes = require("./routes/html-routes.js");
 htmlRoutes(app);
-/* require("./routes/api-routes.js")(app); */
+require("./routes/api-routes.js")(app); 
 
 // Syncing our database and logging a message to the user upon success
 app.listen(PORT, function() {
