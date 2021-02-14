@@ -1,8 +1,6 @@
 var path = require("path");
 var db = require("../models");
 
-// changed Book to Workout...
-
 module.exports = function (app) {
   //index route
   app.get("/api/workouts", function (req, res) {
@@ -28,7 +26,7 @@ module.exports = function (app) {
     });
   });
 
-    //Add Exercise session
+    //Add Exercise to a workout session
     app.put("/api/workouts/:workoutId", function (req, res) {
       console.log(req.params.workoutId);
       db.Workout.create({})
@@ -37,6 +35,18 @@ module.exports = function (app) {
         res.json(dbWorkout);
       })
       .catch(err => {
+        res.json(err);
+      });
+    });
+
+    // GET route to return the last 7 workouts
+    Router.get("/api/workouts/range", (req,res) => {
+      Workout.find({})
+      .sort({"day": -1})
+      .limit(7)
+      .then((workouts) => {
+        res.json(workouts);
+      }).catch((err) => {
         res.json(err);
       });
     });
