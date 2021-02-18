@@ -25,7 +25,9 @@ module.exports = function (app) {
   
   //Create Workout Session
   app.post("/api/workouts", function (req, res) {
-    db.Workout.create({})
+    // API Workouts
+    console.log(req.body, "API Workouts")
+    db.Workout.create(req.body)
     .then(dbWorkout => {
       /* console.log(dbWorkout); */
       res.json(dbWorkout);
@@ -38,14 +40,23 @@ module.exports = function (app) {
     //Add Exercise to a Workout Session
     app.put("/api/workouts/:workoutId", function (req, res) {
       console.log(req.params.workoutId);
-      db.Workout.create({})
-      .then(dbWorkout => {
-        /* console.log(dbWorkout); */
-        res.json(dbWorkout);
-      })
-      .catch(err => {
-        res.json(err);
-      });
+      db.Workout.findOne({_id:req.params.workoutId})
+        .then( dbOriginalWorkout =>{
+          const oldExercise = dbOriginalWorkout.exercises;
+          const updatedExercise = {exercises: [...oldExercise, req.body]} 
+          return updatedExercise;
+        })
+        .then(function(updatedExercise){
+          db.Workout.findByIdAndUpdate({_id:req.params.workoutId}, updatedExercise)
+          .then(dbWorkout => {
+            /* console.log(dbWorkout); */
+            res.json(dbWorkout);
+          })
+          .catch(err => {
+            res.json(err);
+          });
+        })
+      
     });
 
     app.get("/api/workouts/range", function (req, res) {
