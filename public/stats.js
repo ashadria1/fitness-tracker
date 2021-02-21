@@ -27,6 +27,22 @@ function populateChart(data) {
   let workouts = workoutNames(data);
   const colors = generatePalette();
 
+  const durationsMap = data.reduce((obj, workout) => {
+    workout.exercises.forEach((exercise) => {
+      obj[exercise.name] ? (obj[exercise.name] += exercise.duration) : (obj[exercise.name] = exercise.duration);
+    });
+    return obj;
+  }, {});
+
+  const poundsMap = data.reduce((obj, workout) => {
+    workout.exercises
+      .filter((exercise) => exercise.type === "resistance")
+      .forEach((exercise) => {
+        obj[exercise.name] ? (obj[exercise.name] += exercise.weight) : (obj[exercise.name] = exercise.weight);
+      });
+    return obj;
+  }, {});
+
   let line = document.querySelector('#canvas').getContext('2d');
   let bar = document.querySelector('#canvas2').getContext('2d');
   let pie = document.querySelector('#canvas3').getContext('2d');
@@ -135,12 +151,12 @@ function populateChart(data) {
   let pieChart = new Chart(pie, {
     type: 'pie',
     data: {
-      labels: workouts,
+      labels: Object.keys(durationsMap),
       datasets: [
         {
           label: 'Exercises Performed',
           backgroundColor: colors,
-          data: durations,
+          data: Object.values(durationsMap),
         },
       ],
     },
@@ -155,12 +171,12 @@ function populateChart(data) {
   let donutChart = new Chart(pie2, {
     type: 'doughnut',
     data: {
-      labels: workouts,
+      labels: Object.keys(poundsMap),
       datasets: [
         {
           label: 'Exercises Performed',
           backgroundColor: colors,
-          data: pounds,
+          data: Object.values(poundsMap),
         },
       ],
     },
