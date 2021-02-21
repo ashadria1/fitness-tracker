@@ -38,6 +38,7 @@ Please visit these links to view the application:
 
 * The URL to the deployed application on Heroku:
 
+https://floating-scrubland-11446.herokuapp.com/
 
 
 * The URL to the GitHub repository:
