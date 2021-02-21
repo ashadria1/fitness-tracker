@@ -5,6 +5,15 @@ const db = require("./models");
 
 const PORT = process.env.PORT || 8080;
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://username:password@cluster0.jtetc.mongodb.net/fitness-tracker?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/workout',
   {
