@@ -1,6 +1,26 @@
 {
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "For this project, I have created a workout tracker. This project requires a user to create a Mongo database with a Mongoose schema, and handle routes with Express.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashadria1/fitness-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashadria1/fitness-tracker/issues"
+  },
+  "homepage": "https://github.com/ashadria1/fitness-tracker#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.11.17"
+    "mongoose": "^5.11.17",
+    "path": "^0.12.7"
   }
 }
