@@ -48,15 +48,16 @@ The user should be able to:
 💾 
 * A mongodb server is required to function properly. Either set the MONGODB_URI environment variable or modify the connection uri in server.js to your mongodb server.
 * clone the repo to your local machine
-* 'cd project_dir'
-* 'npm install'
+* `cd project_dir`
+* `npm install`
 
 ## Usage
-💻 'npm start'
+💻 `npm start`
 
 ## License
 ![badge](https://img.shields.io/badge/license-ISC-brightgreen)
 <br />
+
 This application is covered by the ISC license. 
 
 ## Contributing
@@ -68,8 +69,10 @@ This application is covered by the ISC license.
 ## Questions
 ✋ Report issues to me on Github.<br />
 <br />
+
 Find me on GitHub: [Adrian Ash](https://github.com/ashadria1)<br />
 <br />
+
 ✉️ Email me with any questions: ashadria@gmail.com<br /><br />
 
 ## Links
