@@ -9,7 +9,6 @@ mongoose.connect(mongoURI  || "mongodb://localhost/workout", {
   useUnifiedTopology: true,
 });
 
-
 let workoutSeed = [
   {
     day: new Date().setDate(new Date().getDate() - 10),
