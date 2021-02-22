@@ -85,6 +85,7 @@ https://github.com/ashadria1/fitness-tracker
 
 ## Screenshots
 
-![Screenshot of input page.](assets/Screenshot1.png?raw=true "Screenshot of sample output!")
+![Screenshot of input page.](assets/Screenshot1.png?raw=true "Screenshot of input page.")
+<br />
 
-![Screenshot of fitness dashboard.](assets/Screenshot2.png?raw=true "Screenshot of sample output!")
+![Screenshot of fitness dashboard.](assets/Screenshot2.png?raw=true "Screenshot of fitness dashboard.")
