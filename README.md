@@ -46,7 +46,8 @@ The user should be able to:
 
 ## Installation
 💾 
-* A mongodb server is required to function properly. Either set the MONGODB_URI environment variable or modify the connection uri in server.js to your mongodb server.
+* A mongodb server is required in order for this app to function properly.  Either set the MONGODB_URI environment variable to your Atlas Database settings, or modify the connection uri in server.js and seed.js to your mongodb server.
+
 * clone the repo to your local machine
 * `cd project_dir`
 * `npm install`
