@@ -45,9 +45,10 @@ The user should be able to:
 
 
 ## Installation
-💾 clone the repo to your local machine
-cd <project_dir>
-npm install
+💾 
+* clone the repo to your local machine
+* cd <project_dir>
+* 'npm install'
 
 ## Usage
 💻 npm start
