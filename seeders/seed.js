@@ -1,22 +1,14 @@
 let mongoose = require("mongoose");
 let db = require("../models");
+const mongoURI = "mongodb+srv://dbUser:dbUser@cluster0.jtetc.mongodb.net/fitness-tracker?retryWrites=true&w=majority"
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://username:password@cluster0.jtetc.mongodb.net/fitness-tracker?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
-/* mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+mongoose.connect(mongoURI  || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
   useUnifiedTopology: true,
 });
- */
+
 
 let workoutSeed = [
   {
