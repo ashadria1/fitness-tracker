@@ -23,7 +23,7 @@
 
 ## Story
 
-* As a user, I want to be able to view, create, and track daily workouts.  I want to be able to log multiple exercises in a workout on a given day.  I should also be able to track the name, type, weight, sets, reps, and duration of exercise.  If the exercise is a cardio exercise, I should be able to track my distance traveled.
+As a user, I want to be able to view, create, and track daily workouts.  I want to be able to log multiple exercises in a workout on a given day.  I should also be able to track the name, type, weight, sets, reps, and duration of exercise.  If the exercise is a cardio exercise, I should be able to track my distance traveled.
 
 ## Context
 
@@ -46,7 +46,7 @@ The user should be able to:
 
 ## Installation
 💾 
-* A mongodb server is required in order for this app to function properly.  Either set the MONGODB_URI environment variable to your Atlas Database settings, or modify the connection uri in server.js and seed.js to your mongodb server.
+* A mongodb server is required in order for this app to function properly.  Either set the MONGODB_URI environment variable to your Atlas Database settings, or modify the connection uri in server.js and seed.js to your local MongoDB server.
 
 * clone the repo to your local machine
 * `cd project_dir`
