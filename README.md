@@ -46,12 +46,13 @@ The user should be able to:
 
 ## Installation
 💾 
+* A mongodb server is required to function properly. Either set the MONGODB_URI environment variable or modify the connection uri in server.js to your mongodb server.
 * clone the repo to your local machine
-* cd <project_dir>
+* 'cd project_dir'
 * 'npm install'
 
 ## Usage
-💻 npm start
+💻 'npm start'
 
 ## License
 ![badge](https://img.shields.io/badge/license-ISC-brightgreen)
