@@ -5,9 +5,9 @@ const db = require("./models");
 
 const PORT = process.env.PORT || 8080;
 
-const mongoURI = "mongodb+srv://dbUser:dbUser@cluster0.jtetc.mongodb.net/fitness-tracker?retryWrites=true&w=majority"
+/* const mongoURI = "mongodb server!" */
 
-mongoose.connect(mongoURI || 'mongodb://localhost/workout',
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/workout',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
