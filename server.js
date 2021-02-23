@@ -7,14 +7,12 @@ const PORT = process.env.PORT || 8080;
 
 /* const mongoURI = "mongodb server!" */
 
-mongoose.connect(MONGODB_URI || 'mongodb://localhost/workout',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
 
 const app = express();
 
